@@ -1,10 +1,8 @@
-// dung lênh switch case  kiem tra tung so rieng le dê xuat ra cach doc  
+// dung lenh switch case  kiem tra tung so rieng le de xuat ra cach doc  
 
 
 
 #include<iostream>
-
-using namespace std;
 
 int main ()
 {
