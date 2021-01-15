@@ -37,21 +37,21 @@ void swap(int &x, int &y)
 	x = y;
 	y = t;
 }
-void selectionSort(int a[], int n)
-{
-	int i, j, min;
-
-	for (int i = 0; i < n - 1; i++)
-	{
-		min = i;
-		for (int j = i + 1; j < n; j++){
-			if (a[j] < a[min]){
-				min = j;
-				swap(a[min], a[i]);
-			}
-		}
-	}
-}
+//void selectionSort(int a[], int n)
+//{
+//	int i, j, min;
+//
+//	for (int i = 0; i < n - 1; i++)
+//	{
+//		min = i;
+//		for (int j = i + 1; j < n; j++){
+//			if (a[j] < a[min]){
+//				min = j;
+//				swap(a[min], a[i]);
+//			}
+//		}
+//	}
+//}
 
 //void interchangeSort(int a[], int n)
 //{
@@ -63,31 +63,31 @@ void selectionSort(int a[], int n)
 //		}
 //	}
 //}
-//void QuickSort(int a[], int Left, int Right)
-//{
-//	int i = Left;
-//	int j = Right;
-//	int mid = (Left + Right)/2;
-//	while (i <= j){
-//		while (a[i] < mid)	
-//		i++;
-//		
-//		while (a[i] > mid)
-//		j++;
-//	 if(i <= j){
-//	 	swap(a[i], a[j]);
-//	 	i++;
-//	 	j--;
-//	 }	
-//	}
-//	
-//	if(Left < j){
-//	QuickSort(a, Left, j);
-//	}
-//	if(i < Right){
-//	QuickSort(a, i, Right);		
-//}	
-//}
+void QuickSort(int a[], int Left, int Right)
+{
+	int i = Left;
+	int j = Right;
+	int mid = (Left + Right)/2;
+	while (i <= j){
+		while (a[i] < mid)	
+		i++;
+		
+		while (a[i] > mid)
+		j++;
+	 if(i <= j){
+	 	swap(a[i], a[j]);
+	 	i++;
+	 	j--;
+	 }	
+	}
+	
+	if(Left < j){
+	QuickSort(a, Left, j);
+	}
+	if(i < Right){
+	QuickSort(a, i, Right);		
+}	
+}
 //void MergeSort(int a[], int b[], int c[] ,int m, int n, int &k)
 //{
 //	int i = 0, j = 0;
@@ -127,9 +127,9 @@ int main()
 	xuatmang(a, n);
 //	cout << "mang sau khi sap xep la:";
 	clock_t start = clock();// ham bat dau dem thoi gian thuc hieen chuong trình
-	selectionSort(a, n);
+//	selectionSort(a, n);
 //	interchangeSort(a, n);
-//	QuickSort(a, 0, n-1);
+	QuickSort(a, 0, n-1);
 //	MergeSort(a, b, c , m , n , k);
 	xuatmang(a, n);
 	clock_t finish = clock();// ham deem thoi gian ket thúc
